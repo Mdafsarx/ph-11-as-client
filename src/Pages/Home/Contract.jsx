@@ -20,6 +20,7 @@ const Contract = () => {
         showConfirmButton: false,
         timer: 2000
       });
+      e.target.reset()
     }
 
     return (

@@ -7,6 +7,7 @@ const Newsletter = () => {
         e.preventDefault();
         //   const email=e.target.email.value ;
         toast.success('Thankyou for subscribing our newsletter')
+        e.target.reset()
     }
 
 

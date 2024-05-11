@@ -1,15 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import RecentCard from "./RecentCard";
-import axios from "axios";
+// import axios from "axios";
 import Marquee from "react-fast-marquee";
+import useAxiosUrl from "../../hooks/useAxiosUrl";
 
 const RecentBlog = () => {
-
+    const axiosUrl=useAxiosUrl()
+     
 
     const { data } = useQuery({
         queryKey: ['recent-blog'],
         queryFn: () =>
-            axios.get('http://localhost:2000/blogs')
+            // axios.get('http://localhost:2000/blogs')
+               axiosUrl.get('/blogs')
                 .then((data) =>
                     data.data
                 ),

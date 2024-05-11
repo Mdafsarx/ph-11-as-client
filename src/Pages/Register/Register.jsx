@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import auth from "../../../firebase.config";
 import { updateProfile } from "firebase/auth";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 const Register = () => {
     const { google, github, registerUser } = useAuth();
@@ -40,6 +40,10 @@ const Register = () => {
         const url = e.target.url.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        if (password.length <= 5) return toast.warning('Password must be at least six characters long')
+        if (!/^(?=.*[A-Z]).+$/.test(password)) return toast.warning('Password must have an uppercase letter')
+        if (!/^(?=.*@).+$/.test(password)) return toast.warning('Password must contain special character at @')
+        if (!/^(?=.*\d).+$/.test(password)) return toast.warning('Password must contain at least one number')
         registerUser(email, password)
             .then(result => {
                 if (result.user) {
@@ -47,6 +51,7 @@ const Register = () => {
                         displayName: name, photoURL: url,
                     }).then(() => {
                         toast.success("Register successful 🎉")
+                        e.target.reset()
                     }).catch((error) => {
                         toast.error(error.message)
                     });

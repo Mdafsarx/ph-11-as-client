@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const Login = () => {
 
-    const { google, github } = useAuth();
+    const { google, github , loginUser } = useAuth();
 
     function handleGoogle() {
         google()
@@ -31,6 +31,22 @@ const Login = () => {
             })
     }
 
+    // login user
+    function handleSubmit(e){
+      e.preventDefault();
+      const email=e.target.email.value;
+      const password=e.target.password.value ;
+      loginUser(email,password)
+      .then(()=>{
+        toast.success('Login successful 🎉')
+        e.target.reset()
+      })
+      .catch(error=>{
+        toast.error(error.message)
+      })
+
+    }
+
     return (
         <div>
             <div className="md:bg-[url('3.gif')] bg-no-repeat bg-cover md:min-h-[90vh] flex justify-center items-center">
@@ -38,10 +54,10 @@ const Login = () => {
                 <div className="flex flex-col w-full max-w-md p-12 space-y-4 text-center  bg-white md:rounded-2xl shadow-2xl  text-black">
                     <h1 className="text-2xl font-bold text-blue-600 uppercase">Login your account</h1>
 
-                    <form className="flex flex-col w-full">
-                        <label htmlFor="username" className="self-start text-xs font-semibold">Email</label>
-                        <input id="username" type="text" className="flex items-center h-12 px-4 mt-2 rounded border-black border " required/>
-                        <label htmlFor="password" className="self-start mt-3 text-xs font-semibold">Password</label>
+                    <form className="flex flex-col w-full" onSubmit={handleSubmit}>
+                        <label className="self-start text-xs font-semibold">Email</label>
+                        <input id="email" type="email" className="flex items-center h-12 px-4 mt-2 rounded border-black border " required/>
+                        <label className="self-start mt-3 text-xs font-semibold">Password</label>
                         <input id="password" type="password" className="flex items-center h-12 px-4 mt-2 rounded border-black border" required/>
                         <button type="submit" className="btn btn-block bg-black text-white mt-3">Login</button>
                     </form>
