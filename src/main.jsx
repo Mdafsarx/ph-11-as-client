@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import 'sweetalert2/src/sweetalert2.scss'
+import AuthProvider from './Auth/AuthProvider'
 
 
 const queryClient = new QueryClient()
@@ -15,7 +16,9 @@ const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </QueryClientProvider>
     <Toaster />
     <ToastContainer />

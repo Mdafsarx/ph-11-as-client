@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 const Nav = () => {
+     
 
     const pages = <>
         <NavLink to={'/'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':''}>Home</NavLink>
