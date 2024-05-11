@@ -11,7 +11,6 @@ const RecentBlog = () => {
     const { data } = useQuery({
         queryKey: ['recent-blog'],
         queryFn: () =>
-            // axios.get('http://localhost:2000/blogs')
                axiosUrl.get('/blogs')
                 .then((data) =>
                     data.data
@@ -30,7 +29,7 @@ const RecentBlog = () => {
             <Marquee >
                 <div className="flex gap-10 p-8">
                     {
-                        data?.map((blog, i) => <RecentCard key={i} blog={blog} />)
+                        data?.slice(0,6).map((blog, i) => <RecentCard key={i} blog={blog} />)
                     }
                 </div>
             </Marquee>

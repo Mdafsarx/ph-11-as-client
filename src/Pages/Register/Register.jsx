@@ -6,7 +6,7 @@ import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 
 const Register = () => {
-    const { google, github, registerUser } = useAuth();
+    const { google, github, registerUser , reload , setReload } = useAuth();
 
     function handleGoogle() {
         google()
@@ -52,6 +52,7 @@ const Register = () => {
                     }).then(() => {
                         toast.success("Register successful 🎉")
                         e.target.reset()
+                        setReload(!reload)
                     }).catch((error) => {
                         toast.error(error.message)
                     });

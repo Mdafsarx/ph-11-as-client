@@ -1,20 +1,24 @@
 import { FaBlogger } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
 
 
 const Nav = () => {
-     
+
+    const { User , logout , loading } = useAuth();
+     console.log(User)
 
     const pages = <>
-        <NavLink to={'/'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':''}>Home</NavLink>
+        <NavLink to={'/'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Home</NavLink>
 
-        <NavLink to={'/addBlog'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':''}>Add Blog</NavLink>
+        <NavLink to={'/addBlog'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Add Blog</NavLink>
 
-        <NavLink to={'/allBlogs'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':''}>All blogs</NavLink>
+        <NavLink to={'/allBlogs'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>All blogs</NavLink>
 
-        <NavLink to={'/featured'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':''}>Featured Blogs</NavLink>
+        <NavLink to={'/featured'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Featured Blogs</NavLink>
 
-        <NavLink to={'/wishlist'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':''}>Wishlist</NavLink>
+        <NavLink to={'/wishlist'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Wishlist</NavLink>
     </>
 
 
@@ -32,20 +36,32 @@ const Nav = () => {
                     </div>
                     {/* login and logout */}
 
-                    <div className="flex items-center gap-2 font-bold text-white ">
-                        <NavLink to={'/login'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':'hover:text-blue-600 hover:underline'}>Login</NavLink>
-
-                        <NavLink to={'/register'} className={({isActive})=>isActive?'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ':'hover:text-blue-600 hover:underline'}>Register</NavLink>
-                    </div>
-
-                    {/* <div className="flex items-center gap-2 p-2">
-                        <div className="avatar">
-                            <div className="w-8 rounded-full ring ring-white">
-                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    {   loading ? <span className="loading loading-bars loading-md "></span> : 
+                        User
+                            ?
+                            <div className="flex items-center gap-2 p-2">
+                                <div className="avatar">
+                                    <div className="w-8 rounded-full ring ring-white">
+                                        <img src={User?.photoURL} />
+                                    </div>
+                                </div>
+                                <button className="font-bold text-white hover:text-blue-600 hover:underline" onClick={()=>{
+                                    logout()
+                                    .then(()=>toast.success('Logout successful'))
+                                    .catch(error=>toast.error(error.message))
+                                }}>Logout</button>
                             </div>
-                        </div>
-                        <button className="font-bold text-white hover:text-blue-600 hover:underline">Logout</button>
-                    </div> */}
+                            :
+                            <div className="flex items-center gap-2 font-bold text-white ">
+                                <NavLink to={'/login'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-blue-600 hover:underline'}>Login</NavLink>
+
+                                <NavLink to={'/register'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-blue-600 hover:underline'}>Register</NavLink>
+                            </div>
+                    }
+
+
+
+
 
                 </div>
                 <div className="navbar-center hidden lg:flex">

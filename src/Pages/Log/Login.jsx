@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const Login = () => {
 
-    const { google, github , loginUser } = useAuth();
+    const { google, github , loginUser , reload , setReload } = useAuth();
 
     function handleGoogle() {
         google()
@@ -39,7 +39,8 @@ const Login = () => {
       loginUser(email,password)
       .then(()=>{
         toast.success('Login successful 🎉')
-        e.target.reset()
+        e.target.reset();
+        setReload(!reload)
       })
       .catch(error=>{
         toast.error(error.message)

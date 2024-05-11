@@ -5,31 +5,33 @@ import useAxiosUrl from "../../hooks/useAxiosUrl";
 // import toast from "react-hot-toast";
 
 const AddBlog = () => {
-    const [category,setCategory]=useState('');
-    const axiosUrl=useAxiosUrl()
+    const [category, setCategory] = useState('');
+    const axiosUrl = useAxiosUrl()
 
 
-   function handleCategory(e){
-      setCategory(e.target.value)
-   }
+    function handleCategory(e) {
+        setCategory(e.target.value)
+    }
 
-   function handleSubmit(e){
-      e.preventDefault();
-      const title=e.target.title.value;
-      const image=e.target.url.value;
-      const description=e.target.short.value;
-      const longDescription=e.target.long.value;
-      if(category.length<1)return toast.warn('Please fill the category')
-     const blog ={title,image,description,longDescription,category}
-      axiosUrl.post('/blogs',blog)
-      .then(data=>{
-        console.log(data.data)
-      })
-      .catch(error=>{
-        console.log(error)
-      })
-
-   }
+    function handleSubmit(e) {
+        e.preventDefault();
+        const title = e.target.title.value;
+        const image = e.target.url.value;
+        const description = e.target.short.value;
+        const longDescription = e.target.long.value;
+        if (category.length < 1) return toast.warn('Please fill the category')
+        const blog = { title, image, description, longDescription, category }
+        axiosUrl.post('/blogs', blog)
+            .then(data => {
+                if (data.data.insertedId) {
+                    toast.success('Blog added successful')
+                    e.target.reset()
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
 
 
@@ -45,11 +47,11 @@ const AddBlog = () => {
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-full">
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm uppercase">Title</label>
-                                <input id="title" type="text" placeholder="Title" className="w-full rounded-md p-1 pl-2" required/>
+                                <input id="title" type="text" placeholder="Title" className="w-full rounded-md p-1 pl-2" required />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm uppercase">Image url</label>
-                                <input id="url" type="url" placeholder="Image URL" className="w-full rounded-md  p-1 pl-2" required/>
+                                <input id="url" type="url" placeholder="Image URL" className="w-full rounded-md  p-1 pl-2" required />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm uppercase">category</label>
@@ -64,17 +66,17 @@ const AddBlog = () => {
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm uppercase">short description</label>
-                                <input id="short" type="text" placeholder="Short description" className="w-full rounded-md p-1 pl-2" required/>
+                                <input id="short" type="text" placeholder="Short description" className="w-full rounded-md p-1 pl-2" required />
                             </div>
 
                             <div className="col-span-full sm:col-span-full">
                                 <label className="text-sm uppercase">long description</label>
-                                <input id="long" type="text" placeholder="Long description" className="w-full rounded-md p-1 pl-2" required/>
+                                <input id="long" type="text" placeholder="Long description" className="w-full rounded-md p-1 pl-2" required />
                             </div>
 
                         </div>
                     </fieldset>
-                       <button className="btn btn-block bg-[#E21818] text-white">Submit</button>
+                    <button className="btn btn-block bg-[#E21818] text-white">Submit</button>
                 </form>
             </section>
         </div>
