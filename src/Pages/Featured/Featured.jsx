@@ -3,56 +3,62 @@ import DataTable from "react-data-table-component";
 import useAxiosUrl from "../../hooks/useAxiosUrl";
 
 const Featured = () => {
-    const axiosUrl=useAxiosUrl()
+    const axiosUrl = useAxiosUrl()
 
     const columns = [
         {
-            name: 'Serial Number',
-            selector: row => row._id,
+            name: '',
+            cell: (row, index) => index + 1,
+            sortable: true,
         },
         {
             name: 'Profile',
-            selector: row => row.name,
+            selector: row => <img src={row?.profile} alt="Profile" className="rounded-full size-16 " />,
+            sortable: true,
         },
         {
             name: 'Owner',
             selector: row => row.name,
+            sortable: true,
         },
         {
             name: 'Title',
-            selector: row => row.name,
+            selector: row => row.title,
+            sortable: true,
         },
     ];
 
-   
 
-    const { data:blogs } = useQuery({
+
+    const { data: blogs } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
-          axiosUrl.get('/blogs')
-        .then(data=>data.data.sort((a,b)=>{
-            const aLength=a.longDescription.length ;
-            const bLength=b.longDescription.length ;
-            return bLength - aLength 
-        }))
-        .catch(error=>console.log(error))
-      })
-      console.log(blogs)
-     
+            axiosUrl.get('/blogs')
+                .then(data => data.data.sort((a, b) => {
+                    const aLength = a.longDescription.length;
+                    const bLength = b.longDescription.length;
+                    return bLength - aLength
+                }))
+                .catch(error => console.log(error))
+    })
+    console.log(blogs)
 
-    //   const sortedData = [...blogs].sort((a, b) => {
-    //     const aPrice = parseInt(a.);
-    //     const bPrice = parseInt(b.price);
-    //     return bPrice - aPrice;
-    //   });
-      
+    const customStyles = {
+        rows: {
+            style: { padding: '10px' }
+        },
+        cells: {
+            style: { padding: '5px', }
+        },
+    };
 
 
     return (
-        <div>
-            <DataTable
+        <div className="max-w-7xl mx-auto my-14">
+            <DataTable 
                 columns={columns}
-                data={blogs}
+                data={blogs?.slice(0, 10)}
+                customStyles={customStyles}
             />
         </div>
     );
