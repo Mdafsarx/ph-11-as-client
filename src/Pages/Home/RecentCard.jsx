@@ -1,9 +1,9 @@
 const RecentCard = ({blog}) => {
-    const {title,image,description,category,primary_color,secondary_color}=blog||{}
+    const {title,image,description,category}=blog||{}
     
     return (
         <div>
-            <div className={`card w-96  bg-gradient-to-r from-[${primary_color}] to-[${secondary_color}] shadow-xl p-2`}>
+            <div className={`card w-96 shadow-xl p-2`}>
                 <figure className="px-6 pt-3">
                     <img src={image}  className="rounded-2xl h-52 w-full" />
                 </figure>

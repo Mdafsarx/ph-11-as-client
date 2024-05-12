@@ -1,20 +1,40 @@
-const WishListCard = ({Wishlist}) => {
-    console.log(Wishlist)
-    const {title,image,description,category}=Wishlist||{}
+import useAuth from "../../hooks/useAuth";
+import useAxiosUrl from "../../hooks/useAxiosUrl";
+
+const WishListCard = ({ Wishlist }) => {
+    const { title, image, description, category , _id } = Wishlist || {};
+    const axiosUrl=useAxiosUrl();
+    const {refresh,setRefresh}=useAuth()
 
     return (
         <div>
-            <div className="card card-side border-2 border-black">
-                <figure>
-                   <img src={image} alt="" />
+            <div className="flex items-center shadow-lg border-2 border-black h-64">
+
+                <figure className="m-4">
+                    <img src={image} className="w-96 rounded-3xl h-56" />
                 </figure>
-                <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+
+                <div className="p-6 space-y-1">
+                    <h2 className="text-xl font-bold font-serif">{title}</h2>
+                    <p><span className="font-bold">Category: </span>{category}</p>
+                    <p>{description}...</p>
+                    <div className="flex items-center gap-3">
+                        <button className="btn btn-sm bg-[#4CCD99] text-white">Details</button>
+                        <button className="btn btn-sm bg-[#E21818] text-white" onClick={()=>{
+                              
+                              axiosUrl.delete(`/wishlist/${_id}`)
+                              .then(data=>{
+                                if(data.data.deletedCount === 1){
+                                     setRefresh(!refresh)
+                                }
+                              })
+                              .catch(error=>console.log(error))
+                         
+
+                        }}>Remove</button>
                     </div>
                 </div>
+
             </div>
         </div>
     );

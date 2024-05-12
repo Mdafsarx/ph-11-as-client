@@ -6,12 +6,12 @@ import Empty from "./Empty";
 
 
 const WishList = () => {
-    const { User, loading } = useAuth()
+    const { User, loading , refresh } = useAuth()
     const axiosUrl = useAxiosUrl()
 
     const uri = `/wishlist/${User?.email}`
     const { data } = useQuery({
-        queryKey: ['wishlist', loading],
+        queryKey: ['wishlist', loading , refresh],
         queryFn: () =>
             axiosUrl.get(uri)
                 .then((data) =>
@@ -24,7 +24,7 @@ const WishList = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto my-20">
+        <div className="max-w-7xl mx-auto my-20 px-5 ">
             {
                 loading ?
                     <div className="min-h-[60vh]  flex justify-center items-center">
@@ -34,7 +34,7 @@ const WishList = () => {
                     data?.length === 0 ?
                         <Empty text={'You have not added anything'} />
                         :
-                        <div className="space-y-8">
+                        <div className="grid lg:grid-cols-2 gap-6">
                             {
                                 data?.map((list,i) => <WishListCard key={i} Wishlist={list} />)
                             }

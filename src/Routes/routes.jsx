@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import Error from "../Error/Error"
 import AllBlogs from "../Pages/allBlogs/AllBlogs";
 import WishList from "../Pages/WishList/WishList";
+import Featured from "../Pages/Featured/Featured";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/featured',
-                element:<div>featured</div>
+                element:<Featured/>
             },
             {
                 path:'/wishlist',

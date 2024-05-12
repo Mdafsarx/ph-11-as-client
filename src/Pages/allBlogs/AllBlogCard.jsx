@@ -29,7 +29,7 @@ const AllBlogCard = ({ data }) => {
                 </figure>
                 <div className="pl-3 space-y-1">
                     <h2 className="text-lg font-black font-serif">{title}</h2>
-                    <p><span className="font-bold">Category:</span>{category}</p>
+                    <p><span className="font-bold">Category: </span>{category}</p>
                     <p className="text-balance "> {description} </p>
                 </div>
                 <div className="flex flex-col justify-center gap-4 items-center pr-4">

@@ -8,7 +8,8 @@ const AuthProvider = ({ children }) => {
 
     const [User, setUser] = useState(null);
     const [loading,setLoading]=useState(true);
-    const [reload,setReload]=useState(false)
+    const [reload,setReload]=useState(false);
+    const [refresh,setRefresh]=useState(false)
 
     // register user
     const registerUser = (email, password) => {
@@ -42,7 +43,7 @@ const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ google, github, registerUser, loginUser ,logout, User , loading , reload , setReload}}>
+        <AuthContext.Provider value={{ google, github, registerUser, loginUser ,logout, User , loading , reload , setReload , refresh,setRefresh}}>
             {children}
         </AuthContext.Provider>
     );
