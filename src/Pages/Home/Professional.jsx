@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+import { motion } from "framer-motion";
+
 const Professional = () => {
     return (
         <div className="mb-20 ">
@@ -13,42 +15,48 @@ const Professional = () => {
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-14 px-5 lg:px-0">
 
-                <div className="flex flex-col items-center ">
-                    <div className="radial-progress bg-primary text-secondary-content border-4 border-primary " style={{ "--value": 90, "--size": "10rem" }} role="progressbar">90%</div>
-
-                    <div className="text-center">
-                        <h1 className="text-lg font-bold">Deep Space Mysteries</h1>
-                        <p className="text-balance">Exploring cosmic mysteries  in <br /> the  vast expanse of deep space.</p>
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+                    <div className="flex flex-col items-center ">
+                        <div className="radial-progress bg-primary text-secondary-content border-4 border-primary " style={{ "--value": 90, "--size": "10rem" }} role="progressbar">90%</div>
+                        <div className="text-center">
+                            <h1 className="text-lg font-bold">Deep Space Mysteries</h1>
+                            <p className="text-balance">Exploring cosmic mysteries  in <br /> the  vast expanse of deep space.</p>
+                        </div>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col items-center">
-                    <div className="radial-progress bg-gray-700 text-secondary-content border-4 border-gray-700 " style={{ "--value": 70, "--size": "10rem" }} role="progressbar">70%</div>
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+                    <div className="flex flex-col items-center">
+                        <div className="radial-progress bg-gray-700 text-secondary-content border-4 border-gray-700 " style={{ "--value": 70, "--size": "10rem" }} role="progressbar">70%</div>
 
-                    <div className="text-center">
-                        <h1 className="text-lg font-bold">Exploring the Cosmos</h1>
-                        <p className="text-balance">Explore universe's wonders through <br /> commentary, research, and <br /> captivating visuals</p>
+                        <div className="text-center">
+                            <h1 className="text-lg font-bold">Exploring the Cosmos</h1>
+                            <p className="text-balance">Explore universe's wonders through <br /> commentary, research, and <br /> captivating visuals</p>
+                        </div>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col items-center">
-                    <div className="radial-progress bg-slate-300 text-secondary-content border-4 border-slate-300 " style={{ "--value": 50, "--size": "10rem" }} role="progressbar">50%</div>
-                    <div className="text-center">
-                        <h1 className="text-lg font-bold">Space Journeys</h1>
-                        <p className="text-balance">Embark on odyssey through <br /> cosmos exploring latest discoveries <br /> and timeless mysteries.</p>
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+                    <div className="flex flex-col items-center">
+                        <div className="radial-progress bg-slate-300 text-secondary-content border-4 border-slate-300 " style={{ "--value": 50, "--size": "10rem" }} role="progressbar">50%</div>
+                        <div className="text-center">
+                            <h1 className="text-lg font-bold">Space Journeys</h1>
+                            <p className="text-balance">Embark on odyssey through <br /> cosmos exploring latest discoveries <br /> and timeless mysteries.</p>
+                        </div>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col items-center">
-                    <div className="radial-progress bg-[#4CCD99] text-secondary-content border-4 border-[#4CCD99] " style={{ "--value": 60, "--size": "10rem" }} role="progressbar">60%</div>
+                <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+                    <div className="flex flex-col items-center">
+                        <div className="radial-progress bg-[#4CCD99] text-secondary-content border-4 border-[#4CCD99] " style={{ "--value": 60, "--size": "10rem" }} role="progressbar">60%</div>
 
-                    <div className="text-center">
-                        <h1 className="text-lg font-bold">Universe Navigation</h1>
-                        <p className="text-balance">Guiding readers through cosmos <br /> from celestial phenomena to <br />astrophysical frontiers.</p>
+                        <div className="text-center">
+                            <h1 className="text-lg font-bold">Universe Navigation</h1>
+                            <p className="text-balance">Guiding readers through cosmos <br /> from celestial phenomena to <br />astrophysical frontiers.</p>
+                        </div>
+
                     </div>
-
-                </div>
-
+                </motion.div>
 
             </div>
 

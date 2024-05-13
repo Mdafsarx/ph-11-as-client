@@ -8,6 +8,7 @@ import Error from "../Error/Error"
 import AllBlogs from "../Pages/allBlogs/AllBlogs";
 import WishList from "../Pages/WishList/WishList";
 import Featured from "../Pages/Featured/Featured";
+import Private from "../Private/Private";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addBlog',
-                element:<AddBlog/>
+                element:<Private><AddBlog/></Private>
             },
             {
                 path:'/allBlogs',
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/wishlist',
-                element:<WishList/>
+                element:<Private><WishList/></Private>
             },
             {
                 path:"/login",

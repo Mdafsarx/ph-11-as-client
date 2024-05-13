@@ -1,17 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
 
     const { google, github , loginUser , reload , setReload } = useAuth();
+    const location=useLocation();
+    const nav=useNavigate()
+    // console.log(location)
 
     function handleGoogle() {
         google()
             .then(result => {
                 if (result.user) {
                     toast.success('Login successful 💖')
+                    nav(location.state||'/')
                 }
             })
             .catch(error => {
@@ -24,6 +28,7 @@ const Login = () => {
             .then(result => {
                 if (result.user) {
                     toast.success('Login successful 💖')
+                    nav(location.state||'/')
                 }
             })
             .catch(error => {
@@ -41,6 +46,7 @@ const Login = () => {
         toast.success('Login successful 🎉')
         e.target.reset();
         setReload(!reload)
+        nav(location.state||'/')
       })
       .catch(error=>{
         toast.error(error.message)

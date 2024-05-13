@@ -54,7 +54,7 @@ const Featured = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto my-14">
+        <div className="max-w-7xl mx-auto md:my-14 md:border lg:rounded-xl ">
             <DataTable 
                 columns={columns}
                 data={blogs?.slice(0, 10)}

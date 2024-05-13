@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import auth from "../../../firebase.config";
 import { updateProfile } from "firebase/auth";
@@ -7,12 +7,15 @@ import toast from "react-hot-toast";
 
 const Register = () => {
     const { google, github, registerUser , reload , setReload } = useAuth();
+    const nav=useNavigate()
+
 
     function handleGoogle() {
         google()
             .then(result => {
                 if (result.user) {
                     toast.success('Register successful 💖')
+                    nav('/')
                 }
             })
             .catch(error => {
@@ -25,6 +28,8 @@ const Register = () => {
             .then(result => {
                 if (result.user) {
                     toast.success('Register successful 💖')
+                    nav('/')
+
                 }
             })
             .catch(error => {
@@ -53,6 +58,7 @@ const Register = () => {
                         toast.success("Register successful 🎉")
                         e.target.reset()
                         setReload(!reload)
+                        nav('/')
                     }).catch((error) => {
                         toast.error(error.message)
                     });
