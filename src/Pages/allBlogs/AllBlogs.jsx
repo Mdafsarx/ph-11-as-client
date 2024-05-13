@@ -1,29 +1,44 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosUrl from "../../hooks/useAxiosUrl";
 import AllBlogCard from "./AllBlogCard";
+import { useState } from "react";
 
 const AllBlogs = () => {
 
-    const axiosUrl=useAxiosUrl()
+    const axiosUrl = useAxiosUrl()
+    const [searchText, setSearchText] = useState('')
+    const [search, setSearch] = useState('');
+    const [category,setCategory]=useState('');
+    const [removeSearch,setRemoveSearch]=useState(false);
+
     const { data } = useQuery({
-        queryKey: ['all-blog'],
+        queryKey: ['all-blog',removeSearch || searchText , category ],
         queryFn: () =>
-               axiosUrl.get('/blogs')
-                .then((data) =>
-                    data.data.slice(6,data.data.length)
+            axiosUrl.get(`/blogs?search=${removeSearch?'':searchText}&category=${category}`)
+                .then((data) => data.data
                 ),
     })
-    
-    const handleSearch=()=>{
-        alert()
+
+    const handleSearch = () => {
+        setRemoveSearch(false)
+        setCategory('')
+        setSearchText(search);
+        document.getElementById('search').value=''
     }
+
+    const handleFilter=(e)=>{
+       setRemoveSearch(true)
+       setCategory(e.target.value)
+    }
+    
+    
 
 
     return (
         <div className="max-w-7xl mx-auto my-20">
 
             <div className="flex items-center justify-between px-2 pb-5">
-
+                {/* search */}
                 <fieldset className="w-full space-y-1 ">
                     <label htmlFor="Search" className="hidden">Search</label>
                     <div className="relative">
@@ -34,23 +49,27 @@ const AllBlogs = () => {
                                 </svg>
                             </button>
                         </span>
-                        <input type="search" name="Search" placeholder="Search..." className="w-96 py-2 pl-10 pr-2 bg-[#100F0F0D] text-sm rounded-md border  focus:outline-none " />
+                        <input type="search" name="Search" id="search" onChange={(e) => {
+                            setSearch(e.target.value)
+                        }} placeholder="Search..." className="w-44 md:w-72 lg:w-96 py-2 pl-10 pr-2 bg-[#100F0F0D] text-sm rounded-md border  focus:outline-none " />
                     </div>
                 </fieldset>
 
-                <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn m-1 bg-[#100F0F0D] shadow-md text-[#E21818] font-bold">Filter</div>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
-                    </ul>
-                </div>
+                <select className="select w-full max-w-40 md:max-w-56 border border-black " onChange={handleFilter}>
+                    <option disabled selected>Filter By Category</option>
+                    <option value={'Science'}>Science</option>
+                    <option value="Food">Food</option>
+                    <option value="History">History</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Self-Improvement">Self-Improvement</option>
+                    <option value="Wellness">Wellness</option>
+                </select>
 
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 px-2 md:px-0">
                 {
-                    data?.map((blog,i)=><AllBlogCard key={i} data={blog}/>)
+                    data?.map((blog, i) => <AllBlogCard key={i} data={blog} />)
                 }
             </div>
         </div>

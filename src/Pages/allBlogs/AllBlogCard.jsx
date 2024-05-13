@@ -27,8 +27,8 @@ const AllBlogCard = ({ data }) => {
                 <figure className="m-4 mr-0 ">
                     <img src={image} alt="Movie" className="rounded-xl w-56 h-40" />
                 </figure>
-                <div className="pl-3 space-y-1">
-                    <h2 className="text-lg font-black font-serif">{title}</h2>
+                <div className="pl-3 md:space-y-1">
+                    <h2 className="md:text-lg font-black font-serif">{title}</h2>
                     <p><span className="font-bold">Category: </span>{category}</p>
                     <p className="text-balance "> {description} </p>
                 </div>
