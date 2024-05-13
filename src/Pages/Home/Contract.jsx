@@ -37,7 +37,7 @@ const Contract = () => {
 
                     <div className="grid md:grid-cols-2 ">
                         {/* 1 */}
-                        <div className="bg-[#F3F3F3] flex flex-row justify-center items-center md:border-2 border-black border-t-0 border-l-0">
+                        <div className="bg-[#F3F3F3] flex flex-row justify-center items-center md:border-2 border-black md:border-t-0 md:border-l-0">
 
                             <div className="flex flex-col items-center p-4 lg:p-0">
                                 <IoLocationSharp className="text-3xl md:text-5xl" />

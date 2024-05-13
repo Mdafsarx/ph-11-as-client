@@ -58,7 +58,7 @@ const Register = () => {
 
     return (
         <div>
-            <div className="md:bg-[url('3.gif')] bg-no-repeat bg-cover md:min-h-[90vh] flex justify-center items-center">
+            <div className="md:bg-[url('/3.gif')] bg-no-repeat bg-cover md:min-h-[90vh] flex justify-center items-center">
 
                 <div className="flex flex-col w-full max-w-md p-12 space-y-4 text-center bg-white md:rounded-2xl md:shadow-2xl  text-black">
                     <h1 className="text-2xl font-bold text-blue-600 uppercase">let's  Register</h1>
