@@ -34,11 +34,11 @@ const AllBlogs = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto my-20">
+        <div className="max-w-7xl mx-auto my-10 md:my-20 px-4 lg:px-0">
 
-            <div className="flex items-center justify-between px-2 pb-5">
+            <div className="flex flex-col md:flex-row items-center justify-between px-2 pb-5 gap-5">
                 {/* search */}
-                <fieldset className="w-full space-y-1 ">
+                <fieldset className="md:w-full space-y-1">
                     <label htmlFor="Search" className="hidden">Search</label>
                     <div className="relative">
                         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -50,11 +50,11 @@ const AllBlogs = () => {
                         </span>
                         <input type="search" name="Search" id="search" onChange={(e) => {
                             setSearch(e.target.value)
-                        }} placeholder="Search..." className="w-44 md:w-72 lg:w-96 py-2 pl-10 pr-2 bg-[#100F0F0D] text-sm rounded-md border  focus:outline-none " />
+                        }} placeholder="Search..." className="w-36 md:w-72 lg:w-96 py-2 pl-10 pr-2 bg-[#100F0F0D] text-sm rounded-md border  focus:outline-none " />
                     </div>
                 </fieldset>
 
-                <select className="select w-full max-w-40 md:max-w-56 border border-black " onChange={handleFilter}>
+                <select className="select-sm w-full max-w-40 md:max-w-56 border border-black rounded-md" onChange={handleFilter}>
                     <option disabled selected>Filter By Category</option>
                     <option value={'Science'}>Science</option>
                     <option value="Food">Food</option>

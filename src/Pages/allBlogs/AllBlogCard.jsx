@@ -22,17 +22,17 @@ const AllBlogCard = ({ data }) => {
 
     return (
         <div>
-            <div className=" flex items-center  bg-gradient-to-tl from-[#000000DB] to-[#00000033] shadow-xl text-white rounded-2xl h-56">
+            <div className=" flex flex-col lg:flex-row items-center  bg-gradient-to-tl from-[#000000DB] to-[#00000033] shadow-xl text-white md:rounded-2xl h-96 lg:h-56">
 
                 <figure className="m-4 mr-0 ">
                     <img src={image} alt="Movie" className="rounded-xl w-56 h-40" />
                 </figure>
-                <div className="pl-3 md:space-y-1">
+                <div className="pl-3 lg:space-y-1">
                     <h2 className="md:text-lg font-black font-serif">{title}</h2>
                     <p><span className="font-bold">Category: </span>{category}</p>
                     <p className="text-balance "> {description} </p>
                 </div>
-                <div className="flex flex-col justify-center gap-4 items-center pr-4">
+                <div className="flex flex-row lg:flex-col justify-center gap-4 items-center p-3 lg:pr-4 flex-grow">
                     <button className="btn  border-none text-white bg-[#4CCD99] btn-sm w-16">Details</button>
                     <button className="btn border-none text-white bg-[#E21818] btn-sm w-16" onClick={HandleWishList}>Wishlist</button>
                 </div>

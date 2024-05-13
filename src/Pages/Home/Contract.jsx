@@ -35,9 +35,9 @@ const Contract = () => {
 
                 <div className="grid max-w-screen-xl grid-cols-1 gap-4  py-16 mx-auto rounded-lg md:grid-cols-2 px-5 md:px-12 lg:px-16 xl:px-32">
 
-                    <div className="grid grid-cols-2 ">
+                    <div className="grid md:grid-cols-2 ">
                         {/* 1 */}
-                        <div className="bg-[#F3F3F3] flex justify-center items-center border-2 border-black border-t-0 border-l-0">
+                        <div className="bg-[#F3F3F3] flex flex-row justify-center items-center md:border-2 border-black border-t-0 border-l-0">
 
                             <div className="flex flex-col items-center p-4 lg:p-0">
                                 <IoLocationSharp className="text-3xl md:text-5xl" />
@@ -48,7 +48,7 @@ const Contract = () => {
                         </div>
 
                         {/* 2 */}
-                        <div className="bg-[#F3F3F3] flex justify-center items-center border-b-2 border-black ">
+                        <div className="bg-[#F3F3F3] flex justify-center items-center md:border-b-2 border-black ">
                             <div className="flex flex-col items-center  p-4 lg:p-0">
                                 <IoIosCall className="text-3xl md:text-5xl" />
                                 <h1 className="text-xl font-bold text-[#4CCD99]">Call Us</h1>
@@ -58,7 +58,7 @@ const Contract = () => {
 
 
                         {/* 3 */}
-                        <div className="bg-[#F3F3F3] flex justify-center items-center border-r-2 border-black ">
+                        <div className="bg-[#F3F3F3] flex justify-center items-center md:border-r-2 border-black ">
                             <div className="flex flex-col items-center  p-4 lg:p-0">
                                 <AiTwotoneMail className="text-3xl md:text-5xl" />
                                 <h1 className="text-xl font-bold text-[#4CCD99]">Email Us</h1>

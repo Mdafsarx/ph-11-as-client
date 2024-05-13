@@ -9,7 +9,7 @@ const Footer = () => {
                     <p className="text-2xl font-bold flex items-center gap-0 text-[#E21818]">a<span ><FaBlogger /></span>logger</p>
                     <p>Copyright © 2024 - All right reserved<br />Providing reliable tech since 2020</p>
                 </aside>
-                <nav className="grid grid-flow-col gap-4 md:pl-28">
+                <nav className="hidden md:grid grid-flow-col gap-4 pl-28 ">
                     <Link to={'/'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Home</Link>
 
                     <Link to={'/addBlog'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Add Blog</Link>

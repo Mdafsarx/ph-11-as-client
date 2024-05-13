@@ -34,7 +34,6 @@ const AuthProvider = ({ children }) => {
 
     
 
-
     // on auth change
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {

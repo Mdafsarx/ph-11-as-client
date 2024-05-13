@@ -21,7 +21,7 @@ const RecentBlog = () => {
 
     return (
         <div className="py-10 space-y-6">
-            <div className="text-center">
+            <div className="text-center px-2 md:px-0">
                 <h1 className="text-3xl font-bold">Recent blog</h1>
                 <p>Blogging is like work, but without coworkers thwarting you at every turn. <br /> Scott Adams Blogging is a conversation, not a code.</p>
             </div>

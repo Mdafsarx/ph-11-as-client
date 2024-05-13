@@ -26,7 +26,7 @@ const WishList = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto my-20 px-5 ">
+        <div className="max-w-7xl mx-auto my-10 md:my-20 px-5 ">
             {
                 loading ?
                     <div className="min-h-[60vh]  flex justify-center items-center">
