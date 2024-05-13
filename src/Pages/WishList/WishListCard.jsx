@@ -8,7 +8,9 @@ const WishListCard = ({ Wishlist }) => {
 
     return (
         <div>
-            <div className="flex flex-col md:flex-row items-center shadow-lg border-2 border-black md:h-64">
+            <div className="flex flex-col md:flex-row items-center shadow-lg border-2 border-black md:h-64" 
+            data-aos="zoom-in"  data-aos-duration="3000" 
+            >
 
                 <figure className="m-4">
                     <img src={image} className="w-96 rounded-3xl h-56" />

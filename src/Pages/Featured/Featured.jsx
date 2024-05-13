@@ -59,6 +59,7 @@ const Featured = () => {
                 columns={columns}
                 data={blogs?.slice(0, 10)}
                 customStyles={customStyles}
+                
             />
         </div>
     );

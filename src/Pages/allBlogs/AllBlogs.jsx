@@ -38,7 +38,7 @@ const AllBlogs = () => {
 
             <div className="flex flex-col md:flex-row items-center justify-between px-2 pb-5 gap-5">
                 {/* search */}
-                <fieldset className="md:w-full space-y-1">
+                <fieldset className="md:w-full space-y-1" data-aos="fade-right"  data-aos-duration="3000" data-aos-delay="300">
                     <label htmlFor="Search" className="hidden">Search</label>
                     <div className="relative">
                         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -54,7 +54,7 @@ const AllBlogs = () => {
                     </div>
                 </fieldset>
 
-                <select className="select-sm w-full max-w-40 md:max-w-56 border border-black rounded-md" onChange={handleFilter}>
+                <select className="select-sm w-full max-w-40 md:max-w-56 border border-black rounded-md" onChange={handleFilter} data-aos="fade-left"  data-aos-duration="3000" data-aos-delay="300">
                     <option disabled selected>Filter By Category</option>
                     <option value={'Science'}>Science</option>
                     <option value="Food">Food</option>

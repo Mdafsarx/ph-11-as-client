@@ -35,7 +35,7 @@ const Contract = () => {
 
                 <div className="grid max-w-screen-xl grid-cols-1 gap-4  py-16 mx-auto rounded-lg md:grid-cols-2 px-5 md:px-12 lg:px-16 xl:px-32">
 
-                    <div className="grid md:grid-cols-2 ">
+                    <div className="grid md:grid-cols-2 " data-aos="fade-right"  data-aos-duration="3000" data-aos-delay="300">
                         {/* 1 */}
                         <div className="bg-[#F3F3F3] flex flex-row justify-center items-center md:border-2 border-black md:border-t-0 md:border-l-0">
 
@@ -78,14 +78,14 @@ const Contract = () => {
 
                     </div>
 
-                    <form className="space-y-5" onSubmit={handleSubmit}>
+                    <form className="space-y-5" onSubmit={handleSubmit} data-aos="fade-left"  data-aos-duration="3000" data-aos-delay="1000">
                         <div>
                             <label htmlFor="name" className="text-sm">Full name</label>
                             <input id="name" type="text" placeholder="" className="w-full p-3 bg-[#F3F3F3] rounded " required />
                         </div>
                         <div>
                             <label htmlFor="email" className="text-sm">Email</label>
-                            <input id="email" type="email" className="w-full p-3 rounded bg-[#F3F3F3]"  required/>
+                            <input id="email" type="email" className="w-full p-3 rounded bg-[#F3F3F3]" value={'aBlogger@gmail.com'}  required/>
                         </div>
                         <div>
                             <label htmlFor="message" className="text-sm">Message</label>

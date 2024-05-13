@@ -12,7 +12,7 @@ const Newsletter = () => {
 
 
     return (
-        <div className="flex flex-col md:flex-row items-center mx-5 md:mx-32 bg-white  shadow-2xl my-10 rounded-2xl border">
+        <div className="flex flex-col md:flex-row items-center mx-5 md:mx-32 bg-white  shadow-2xl my-10 rounded-2xl border" data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="500">
 
             <figure className="hidden md:flex md:w-1/2">
                 <img src={img} alt="" />

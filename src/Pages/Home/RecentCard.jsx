@@ -17,8 +17,8 @@ const RecentCard = ({ blog }) => {
     }
 
     return (
-        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} >
-            <div>
+        <motion.div whileTap={{ scale: 1.2 }}  >
+            <div data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="500">
                 <div className={`card w-96 shadow-xl p-2`}>
                     <figure className="px-6 pt-3">
                         <img src={image} className="rounded-2xl h-52 w-full" />
