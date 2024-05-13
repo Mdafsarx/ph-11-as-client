@@ -25,7 +25,6 @@ const AllBlogs = () => {
         setSearchText(search);
         document.getElementById('search').value=''
     }
-
     const handleFilter=(e)=>{
        setRemoveSearch(true)
        setCategory(e.target.value)

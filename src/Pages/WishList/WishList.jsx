@@ -13,10 +13,12 @@ const WishList = () => {
     const { data } = useQuery({
         queryKey: ['wishlist', loading , refresh],
         queryFn: () =>
-            axiosUrl.get(uri)
-                .then((data) =>
-                    data.data
-                ),
+            axiosUrl.get(uri,{withCredentials:true})
+                .then((data) =>{
+                    // console.log(data.data)
+                   return data.data
+                }
+                ).catch(error=>console.log(error))
     })
 
 

@@ -28,7 +28,7 @@ const Contract = () => {
 
             <div className="text-center">
                 <h1 className="text-3xl font-bold ">Contact With Us</h1>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority <br /> have suffered alteration in some form, by injected humour.</p>
+                <p>Got questions or feedback? Reach out <br /> to us! Contact us below for prompt assistance.</p>
             </div>
 
             <div>

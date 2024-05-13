@@ -24,7 +24,7 @@ const AddBlog = () => {
         const longDescription = e.target.long.value;
         if (category.length < 1) return toast.warn('Please fill the category')
         const blog = { title, image, description, longDescription, category , email:User?.email ,name:User?.displayName , profile:User?.photoURL }
-        axiosUrl.post('/blogs', blog)
+        axiosUrl.post('/blogs', blog , {withCredentials:true})
             .then(data => {
                 if (data.data.insertedId) {
                     toast.success('Blog added successful')
