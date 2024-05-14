@@ -26,8 +26,8 @@ const Update = () => {
     })
 
 
-    const { title, image, description, category, longDescription } = data || {};
-    // console.log(data)
+    const { title, image, description, category, longDescription , email } = data || {};
+    console.log(data)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -35,8 +35,8 @@ const Update = () => {
         const image = e.target.url.value;
         const description = e.target.short.value;
         const longDescription = e.target.long.value;
-        const blog = { title, image, description, longDescription, category: (categoryS || category) }
-        axiosUrl.put(`/blog/${id}`,blog)
+        const blog = { title, image, description, longDescription, category: (categoryS || category) ,email }
+        axiosUrl.put(`/blog/${id}`,blog , {withCredentials:true})
         .then(data=>{
             if(data.data.modifiedCount==1)toast.success('Successfully updated')
         })

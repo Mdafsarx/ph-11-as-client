@@ -1,16 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useAxiosUrl from "../../hooks/useAxiosUrl";
 
 const WishListCard = ({ Wishlist }) => {
-    const { title, image, description, category , _id } = Wishlist || {};
+    const { title, image, description, category , _id , iD } = Wishlist || {};
     const axiosUrl=useAxiosUrl();
     const {refresh,setRefresh}=useAuth()
+    const nav = useNavigate()
+
 
     return (
         <div>
-            <div className="flex flex-col md:flex-row items-center shadow-lg border-2 border-black md:h-64" 
-            data-aos="zoom-in"  data-aos-duration="3000" 
-            >
+            <div className="flex flex-col md:flex-row items-center shadow-lg border-2 border-black md:h-64">
 
                 <figure className="m-4">
                     <img src={image} className="w-96 rounded-3xl h-56" />
@@ -21,7 +22,9 @@ const WishListCard = ({ Wishlist }) => {
                     <p><span className="font-bold">Category: </span>{category}</p>
                     <p>{description}...</p>
                     <div className="flex items-center gap-3">
-                        <button className="btn btn-sm bg-[#4CCD99] text-white">Details</button>
+                        <button className="btn btn-sm bg-[#4CCD99] text-white" onClick={() => {
+                            nav(`/${iD}`)
+                        }}>Details</button>
                         <button className="btn btn-sm bg-[#E21818] text-white" onClick={()=>{
                               
                               axiosUrl.delete(`/wishlist/${_id}`)

@@ -30,7 +30,7 @@ const Details = () => {
             <div className="my-20 md:grid md:grid-cols-6 gap-10">
 
 
-                <div className="col-span-3 bg-[#1313130D]  p-6 md:p-2 flex justify-center items-center  md:rounded-2xl md:shadow-xl">
+                <div className="col-span-3 bg-[#1313130D]  p-6 md:p-2 flex justify-center items-center  md:rounded-2xl md:shadow-xl"  data-aos="fade-right"  data-aos-duration="3000" data-aos-delay="500">
 
                     <img src={image} alt="" className="w-[500px] h-80 rounded-2xl" />
 
@@ -38,7 +38,7 @@ const Details = () => {
 
 
 
-                <div className="col-span-3  p-3 space-y-3 bg-white md:shadow-2xl md:rounded-xl">
+                <div className="col-span-3  p-3 space-y-3 bg-white md:shadow-2xl md:rounded-xl"  data-aos="fade-left"  data-aos-duration="3000" data-aos-delay="500">
 
                     <p className="text-2xl ">title: <span className="font-serif font-bold">{title}</span></p>
                     <h1 className="text-4xl font-serif">{ }</h1>

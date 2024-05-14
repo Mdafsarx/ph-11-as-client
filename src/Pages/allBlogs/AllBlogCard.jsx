@@ -11,7 +11,7 @@ const AllBlogCard = ({ data }) => {
 
 
     const { title, image, description, category , _id } = data || {}
-    const wishlist={ title, image, description, category , email:User?.email }
+    const wishlist={ title, image, description, category , email:User?.email , iD:_id}
     const nav=useNavigate()
 
     function HandleWishList() {
