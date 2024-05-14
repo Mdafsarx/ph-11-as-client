@@ -34,7 +34,7 @@ const AllBlogs = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto my-10 md:my-20 px-4 lg:px-0">
+        <div className={`max-w-7xl mx-auto px-4 lg:px-0 ${data?.length===1||data?.length===2 ? 'my-10  md:pb-44 md:mt-20':'my-10 md:my-20'}`}>
 
             <div className="flex flex-col md:flex-row items-center justify-between px-2 pb-5 gap-5">
                 {/* search */}

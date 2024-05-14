@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import useAxiosUrl from "../../hooks/useAxiosUrl";
+import { useNavigate } from "react-router-dom";
 
 
 const AllBlogCard = ({ data }) => {
@@ -9,8 +10,9 @@ const AllBlogCard = ({ data }) => {
 
 
 
-    const { title, image, description, category } = data || {}
+    const { title, image, description, category , _id } = data || {}
     const wishlist={ title, image, description, category , email:User?.email }
+    const nav=useNavigate()
 
     function HandleWishList() {
         if(!User)return toast.error('Login first')
@@ -18,6 +20,8 @@ const AllBlogCard = ({ data }) => {
         .then(data=>{if(data.data.insertedId)toast.success('Successfully added')})
         .catch(error=>console.log(error))        
     }
+
+   
 
 
     return (
@@ -33,7 +37,9 @@ const AllBlogCard = ({ data }) => {
                     <p className="text-balance "> {description} </p>
                 </div>
                 <div className="flex flex-row lg:flex-col justify-center gap-4 items-center p-3 lg:pr-4 flex-grow">
-                    <button className="btn  border-none text-white bg-[#4CCD99] btn-sm w-16">Details</button>
+                    <button className="btn  border-none text-white bg-[#4CCD99] btn-sm w-16" onClick={()=>{
+                       nav(`/${_id}`)
+                    }}>Details</button>
                     <button className="btn border-none text-white bg-[#E21818] btn-sm w-16" onClick={HandleWishList}>Wishlist</button>
                 </div>
 

@@ -24,7 +24,7 @@ const Nav = () => {
 
     return (
         <div className="bg-[#4CCD99]">
-            <div className="navbar  max-w-7xl mx-auto" data-aos="fade-right"  data-aos-duration="3000" data-aos-delay="300">
+            <div className="navbar  max-w-7xl mx-auto" data-aos="fade-right"  data-aos-duration="3000" data-aos-delay="500">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
