@@ -11,7 +11,6 @@ const AddBlog = () => {
     const {User}=useAuth();
     const fullDate=new Date();
     const date=fullDate.getDate();
-    console.log(date)
 
 
 
