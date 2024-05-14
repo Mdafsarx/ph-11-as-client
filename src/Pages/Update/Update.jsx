@@ -30,14 +30,17 @@ const Update = () => {
     // console.log(data)
 
     function handleSubmit(e) {
-      e.preventDefault()
-      const title = e.target.title.value;
-      const image = e.target.url.value;
-      const description = e.target.short.value;
-      const longDescription = e.target.long.value;
-      const blog = { title, image, description, longDescription, category:(categoryS || category)}
-     
-
+        e.preventDefault()
+        const title = e.target.title.value;
+        const image = e.target.url.value;
+        const description = e.target.short.value;
+        const longDescription = e.target.long.value;
+        const blog = { title, image, description, longDescription, category: (categoryS || category) }
+        axiosUrl.put(`/blog/${id}`,blog)
+        .then(data=>{
+            if(data.data.modifiedCount==1)toast.success('Successfully updated')
+        })
+        .catch(error=>console.log(error))
 
     }
 
@@ -48,7 +51,7 @@ const Update = () => {
                     <span className="loading loading-bars loading-lg size-16"></span>
                 </div> :
                     <div className="max-w-7xl mx-auto md:my-20 md:px-5 lg:px-0">
-                        <section className="p-6 bg-[#F4F3F0] rounded-2xl" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="500">
+                        <section className="p-6 bg-[#F4F3F0] md:rounded-2xl" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="500">
                             <div className="text-center space-y-2 pb-3">
                                 <h1 className="text-3xl font-bold">Update Your Blog</h1>
                                 <p className="text-balance">Don't focus on having a great <br /> blog. Focus on producing a blog that's <br /> great for your readers.</p>
@@ -66,7 +69,7 @@ const Update = () => {
                                         </div>
                                         <div className="col-span-full sm:col-span-3">
                                             <label className="text-sm uppercase">category</label>
-                                            <select className="select-sm rounded-[8px] select-bordered w-full max-w-[583px] block" defaultValue={category} required  onChange={(e)=>setCategory(e.target.value)}>
+                                            <select className="select-sm rounded-[8px] select-bordered w-full max-w-[583px] block" defaultValue={category} required onChange={(e) => setCategory(e.target.value)}>
                                                 <option value={'Science'}>Science</option>
                                                 <option value="Food">Food</option>
                                                 <option value="History">History</option>
