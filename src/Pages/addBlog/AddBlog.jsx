@@ -9,7 +9,10 @@ const AddBlog = () => {
     const [category, setCategory] = useState('');
     const axiosUrl = useAxiosUrl();
     const {User}=useAuth();
-    console.log(User)
+    const fullDate=new Date();
+    const date=fullDate.getDate();
+    console.log(date)
+
 
 
     function handleCategory(e) {
@@ -23,7 +26,7 @@ const AddBlog = () => {
         const description = e.target.short.value;
         const longDescription = e.target.long.value;
         if (category.length < 1) return toast.warn('Please fill the category')
-        const blog = { title, image, description, longDescription, category , email:User?.email ,name:User?.displayName , profile:User?.photoURL }
+        const blog = { title, image, description, longDescription, category , email:User?.email ,name:User?.displayName , profile:User?.photoURL , Date:date}
         axiosUrl.post('/blogs', blog , {withCredentials:true})
             .then(data => {
                 if (data.data.insertedId) {
