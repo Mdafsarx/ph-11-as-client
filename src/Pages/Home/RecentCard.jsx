@@ -19,7 +19,7 @@ const RecentCard = ({ blog }) => {
 
     return (
         <div data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="500">
-            <div className={`card w-96 shadow-xl p-2 h-96`}>
+            <div className={`card w-96 shadow-xl p-2 h-[420px] border`}>
                 <figure className="px-6 pt-3">
                     <img src={image} className="rounded-2xl h-52 w-full" />
                 </figure>
