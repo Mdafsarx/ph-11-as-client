@@ -32,9 +32,9 @@ const UserProfile = () => {
 
 
     return (
-        <div className="flex justify-center items-center min-h-[80vh] max-w-5xl mx-auto px-2 md:px-0">
+        <div className="flex justify-center items-center min-h-[80vh] max-w-5xl mx-auto">
 
-            <div className="max-w-screen-xl w-full p-8 flex bg-white shadow-md border rounded-xl">
+            <div className="max-w-screen-xl w-full p-8 flex bg-white md:shadow-md md:border rounded-xl md:justify-center">
 
                 <div className="hidden md:block w-1/2">
 
