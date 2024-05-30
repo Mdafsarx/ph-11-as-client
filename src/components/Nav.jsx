@@ -23,7 +23,7 @@ const Nav = () => {
 
         <NavLink to={'/wishlist'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Wishlist</NavLink>
 
-        <NavLink to={`/dashboard/${role?.role==='admin' ?'allUsers':'myCard'}`} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>{role?.role==='admin'?'All users':'My blog'}</NavLink>
+        <NavLink to={`/dashboard/${role?.role==='admin' ?'adminHome':'myCard'}`} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>{role?.role==='admin'?'Admin home':'My blog'}</NavLink>
     </>
 
 
