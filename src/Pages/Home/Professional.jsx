@@ -6,7 +6,7 @@ const Professional = () => {
         <div className="mb-20 ">
 
             <div className="border-2 border-dashed border-x-0 border-black ">
-                <div className="text-center  py-4 my-1  bg-gradient-to-r from-[#FF76CECC] to-[#FF76CE4D] ">
+                <div className="text-center  py-4 my-1  bg-gradient-to-r from-[#4CCD99] to-[#4CCD994D] ">
                     <h1 className="text-3xl font-bold">Professional Blogs</h1>
                     <p>Don't focus on having a great blog. Focus <br /> on producing a blog that's great for your readers. </p>
                 </div>

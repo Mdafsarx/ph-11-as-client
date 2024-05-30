@@ -11,51 +11,102 @@ import Featured from "../Pages/Featured/Featured";
 import Private from "../Private/Private";
 import Details from "../Pages/Details/Details";
 import Update from "../Pages/Update/Update";
+import Dashboard from "../Root/Dashboard";
+import MyCard from "../Pages/Dashboard/MyCard";
+import UserProfile from "../Pages/Dashboard/UserProfile";
+import ContractUs from "../Pages/Dashboard/ContractUs";
+import AllUsers from "../Pages/Dashboard/Admin/AllUsers";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome";
+import AddBlogs from "../Pages/Dashboard/Admin/AdminBlogs";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout/>,
-        errorElement:<Error/>,
-        children:[
+        element: <MainLayout />,
+        errorElement: <Error />,
+        children: [
             {
-                path:'/',
-                element:<Home/>
+                path: '/',
+                element: <Home />
             },
             {
-                path:'/addBlog',
-                element:<Private><AddBlog/></Private>
+                path: '/addBlog',
+                element: <Private><AddBlog /></Private>
             },
             {
-                path:'/allBlogs',
-                element:<AllBlogs/>
+                path: '/allBlogs',
+                element: <AllBlogs />
             },
             {
-                path:'/featured',
-                element:<Featured/>
+                path: '/featured',
+                element: <Featured />
             },
             {
-                path:'/wishlist',
-                element:<Private><WishList/></Private>
+                path: '/wishlist',
+                element: <Private><WishList /></Private>
             },
             {
-                path:"/login",
-                element:<Login/>
+                path: "/login",
+                element: <Login />
             },
             {
-                path:"/register",
-                element:<Register/>
+                path: "/register",
+                element: <Register />
             },
             {
-                path:'/:id',
-                element:<Private><Details/></Private>
+                path: '/:id',
+                element: <Private><Details /></Private>
             },
             {
-                path:'/update/:id',
-                element:<Private><Update/></Private>
-            }
+                path: '/update/:id',
+                element: <Private><Update /></Private>
+            },
         ]
     },
+
+
+
+    // user dashboard
+    {
+        path: 'dashboard',
+        element: <Private><Dashboard /></Private>,
+        children: [
+            // gust route 
+            {
+                path: 'myCard',
+                element: <MyCard />
+            },
+            {
+                path: 'UserProfile',
+                element: <UserProfile />
+            },
+            {
+                path: 'Contract',
+                element: <ContractUs />
+            },
+
+
+
+
+            // admin route 
+            {
+                path: 'allUsers',
+                element: <AllUsers />
+            },
+            {
+                path: 'adminHome',
+                element: <AdminHome />
+            },
+            {
+                path: 'addBlog',
+                element: <AddBlogs />
+            },
+
+
+
+
+        ]
+    }
 ]);
 
 

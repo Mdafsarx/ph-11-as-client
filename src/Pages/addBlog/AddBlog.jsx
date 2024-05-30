@@ -41,8 +41,8 @@ const AddBlog = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto md:my-20 md:px-5 lg:px-0">
-            <section className="p-6 bg-[#F4F3F0] md:rounded-2xl" data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="500">
+        <div className="max-w-7xl mx-auto md:my-20 md:px-5 lg:px-0 ">
+            <section className="p-6 bg-[#F3F4F6C4] opacity-100 md:border-2 md:border-black md:rounded-2xl py-14 md:py-8" data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="500">
                 <div className="text-center space-y-2 pb-3">
                     <h1 className="text-3xl font-bold">Add New Blog</h1>
                     <p className="text-balance">Don't focus on having a great <br /> blog. Focus on producing a blog that's <br /> great for your readers.</p>

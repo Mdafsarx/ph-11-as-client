@@ -2,23 +2,28 @@ import { FaBlogger } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
+import useUsers from "../hooks/useUsers";
 
 
 const Nav = () => {
 
     const { User , logout , loading } = useAuth();
-     console.log(User)
+    const {Data}=useUsers();
+    const role=Data?.find(data=>data?.email===User?.email)
+    //  console.log(User.photoURL)
 
     const pages = <>
         <NavLink to={'/'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Home</NavLink>
 
-        <NavLink to={'/addBlog'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Add Blog</NavLink>
+        <NavLink to={'/addBlog'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Add blog</NavLink>
 
         <NavLink to={'/allBlogs'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>All blogs</NavLink>
 
-        <NavLink to={'/featured'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Featured Blogs</NavLink>
+        <NavLink to={'/featured'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Featured blogs</NavLink>
 
         <NavLink to={'/wishlist'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Wishlist</NavLink>
+
+        <NavLink to={`/dashboard/${role?.role==='admin' ?'allUsers':'myCard'}`} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>{role?.role==='admin'?'All users':'My blog'}</NavLink>
     </>
 
 

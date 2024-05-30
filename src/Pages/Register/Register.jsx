@@ -4,23 +4,29 @@ import useAuth from "../../hooks/useAuth";
 import auth from "../../../firebase.config";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
+import useAxiosUrl from "../../hooks/useAxiosUrl";
+import useUsers from "../../hooks/useUsers";
 
 const Register = () => {
     const { google, registerUser, reload, setReload } = useAuth();
-    const nav = useNavigate()
-
+    const nav = useNavigate();
+    const axiosUrl=useAxiosUrl();
+    useUsers()
 
     function handleGoogle() {
         google()
-            .then(result => {
-                if (result.user) {
-                    toast.success('Register successful 💖')
-                    nav('/')
-                }
-            })
-            .catch(error => {
-                toast.error(error.message)
-            })
+        .then(result => {
+            axiosUrl.post('/user',{name:result.user.displayName,email:result.user.email,role:'guest'})
+                .then(()=>{
+                    if (result.user) {
+                        toast.success('Register successful 💖')
+                        nav(location.state || '/')
+                    }
+                })
+        })
+        .catch(error => {
+            toast.error(error.message)
+        })
     }
 
 
@@ -38,16 +44,21 @@ const Register = () => {
         registerUser(email, password)
             .then(result => {
                 if (result.user) {
-                    updateProfile(auth.currentUser, {
-                        displayName: name, photoURL: url,
-                    }).then(() => {
-                        toast.success("Register successful 🎉")
-                        e.target.reset()
-                        setReload(!reload)
-                        nav('/')
-                    }).catch((error) => {
-                        toast.error(error.message)
-                    });
+                    axiosUrl.post('/user',{name:name,email:email,role:'guest'})
+                    .then((data)=>{
+                        console.log(data.data)
+                        updateProfile(auth.currentUser, {
+                            displayName: name, photoURL: url,
+                        }).then(() => {
+                            toast.success("Register successful 🎉")
+                            e.target.reset()
+                            setReload(!reload)
+                            nav('/')
+                        }).catch((error) => {
+                            toast.error(error.message)
+                        });
+    
+                    })
                 }
             })
             .catch(error => {
@@ -62,7 +73,7 @@ const Register = () => {
 
                 <div className="flex flex-col w-full max-w-md p-12 space-y-4 text-center bg-white md:rounded-2xl md:shadow-2xl  text-black" 
                 data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="500">
-                    <h1 className="text-2xl font-bold text-blue-600 uppercase">let's  Register</h1>
+                    <h1 className="text-2xl font-mono text-[#E21818CC]  uppercase">let's  Register</h1>
                     <form className="space-y-4" onSubmit={handleSubmit}>
                         <div className="flex flex-col text-black">
                             <input id="name" type="text" placeholder="Name" className="rounded-t-md border-black border-2 p-0.5 pl-1" required />
@@ -77,9 +88,9 @@ const Register = () => {
                         {/* <div className="flex justify-between">
                             <div className="flex items-center">
                                 <input type="checkbox" name="remember" id="remember" aria-label="Remember me" className="mr-1 rounded-sm focus:ring-violet-400 focus:border-violet-400 focus:ring-2 accent-violet-400" />
-                                <label htmlFor="remember" className="text-sm text-gray-400">Remember me</label>
+                                <label htmlFor="remember" className="text-sm ">Remember me</label>
                             </div>
-                            <a className="text-sm text-gray-400" href="/">Forgot your password?</a>
+                            <a className="text-sm " href="/">Forgot your password?</a>
                         </div> */}
                         <button type="submit" className="btn bg-black text-white btn-block">Register</button>
                     </form>

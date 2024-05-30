@@ -26,14 +26,14 @@ const Contract = () => {
     return (
         <div className="my-10">
 
-            <div className="text-center">
+            <div className="text-center text-balance">
                 <h1 className="text-3xl font-bold ">Contact With Us</h1>
                 <p>Got questions or feedback? Reach out <br /> to us! Contact us below for prompt assistance.</p>
             </div>
 
             <div>
 
-                <div className="grid max-w-screen-xl grid-cols-1 gap-4  py-16 mx-auto rounded-lg md:grid-cols-2 px-5 md:px-12 lg:px-16 xl:px-32">
+                <div className="grid max-w-screen-xl grid-cols-1 gap-4 py-4  md:y-16 mx-auto rounded-lg md:grid-cols-2 px-5 md:px-12 lg:px-16 xl:px-32">
 
                     <div className="grid md:grid-cols-2 " data-aos="fade-right"  data-aos-duration="3000" data-aos-delay="300">
                         {/* 1 */}

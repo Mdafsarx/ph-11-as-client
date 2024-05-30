@@ -12,7 +12,7 @@ const Empty = ({text}) => {
                     <img src={img} className="w-2/4" />
                     <p className="text-3xl text-purple-500 px-10">{text}
                     </p>
-                    <Link className="btn bg-[#FF6AC2] text-white" to={'/allBlogs'}>Add Blog</Link>
+                    <Link className="btn bg-[#E21818] text-white" to={'/allBlogs'}>Add Blog</Link>
                 </div>
 
             </section>

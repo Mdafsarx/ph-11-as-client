@@ -7,10 +7,10 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
 
     const [User, setUser] = useState(null);
-    const [loading,setLoading]=useState(true);
-    const [reload,setReload]=useState(false);
-    const [refresh,setRefresh]=useState(false);
-    const axiosUrl=useAxiosUrl()
+    const [loading, setLoading] = useState(true);
+    const [reload, setReload] = useState(false);
+    const [refresh, setRefresh] = useState(false);
+    const axiosUrl = useAxiosUrl()
 
     // register user
     const registerUser = (email, password) => {
@@ -28,36 +28,39 @@ const AuthProvider = ({ children }) => {
     function github() {
         return signInWithPopup(auth, githubProvider)
     }
-    const logout=()=>{
-       return signOut(auth) 
+    const logout = () => {
+        return signOut(auth)
     }
 
-    
+
 
     // on auth change
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
-            const userEmail=user?.email;
-            const logUser={email:userEmail};
+            const userEmail = user?.email;
+            const logUser = { email: userEmail };
             setUser(user)
-            setLoading(false)
-            if(user){
-                axiosUrl.post('/jwt',logUser,{withCredentials:true})
-                .then(data=>console.log(data.data))
-                .catch(error=>console.log(error))
+            if (user) {
+                axiosUrl.post('/jwt', logUser, { withCredentials: true })
+                    .then(data => console.log(data.data))
+                    .catch(error => console.log(error))
+                setLoading(false)
+
             }
-            else{
-                axiosUrl.post('/logout',logUser,{withCredentials:true})
-                .then(data=>console.log(data.data))
-                .then(error=>console.log(error))
+            else {
+                axiosUrl.post('/logout', logUser, { withCredentials: true })
+                    .then(data => console.log(data.data))
+                    .then(error => console.log(error))
+                setLoading(false)
+
             }
         })
-    }, [reload])
-    
+    }, [reload,axiosUrl])
+
 
 
     return (
-        <AuthContext.Provider value={{ google, github, registerUser, loginUser ,logout, User , loading , reload , setReload , refresh,setRefresh}}>
+        <AuthContext.Provider value={{ google, github, registerUser, loginUser, logout, User, loading, reload, setReload, refresh, setRefresh }}>
             {children}
         </AuthContext.Provider>
     );
