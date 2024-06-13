@@ -4,7 +4,7 @@ Live Site: [aBlogger](https://scintillating-meringue-0cb917.netlify.app)
 
 ## About aBlogger
 
-This is a simple blogging platform where you can share your thoughts, ideas, and experiences with the world. Below are some key features of the website
+This is a simple blogging platform where you can share your thoughts, ideas, and experiences with the world. Below are some key features of the website.
 
 ## Features
 
