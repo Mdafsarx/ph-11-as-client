@@ -1,6 +1,7 @@
 # aBlogger
 
 Live Site: [aBlogger](https://scintillating-meringue-0cb917.netlify.app)
+server: [here](https://github.com/Mdafsarx/ph-11-as-server)
 
 ## About aBlogger
 
