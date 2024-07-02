@@ -21,11 +21,12 @@ server: [here](https://github.com/Mdafsarx/ph-11-as-server)
 
 ## Package use
 - @tanstack/react-query
-- react-router-dom
-- react-simple-typewriter
+- recharts
+- framer-motion
 - react-spinners
 - stripe
 - swiper
+- recharts
 
 
 ## Getting Started
