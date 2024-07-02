@@ -19,4 +19,44 @@ server: [here](https://github.com/Mdafsarx/ph-11-as-server)
 4. **Interactivity and Engagement:** Features like comments sections, social media integration, and sharing buttons encourage reader engagement and interaction, fostering a sense of community around the blog.
 
 
+## Package use
+- @tanstack/react-query
+- react-router-dom
+- react-simple-typewriter
+- react-spinners
+- stripe
+- swiper
+
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Make sure you have Node.js and npm (or yarn) installed on your development machine.
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/your-project.git
+   
+   Navigate into the project directory: cd your-project
+
+   Install dependencies:
+   
+   npm install
+   or
+   yarn install
+
+   To run the project locally, use the following command:
+   npm start
+   or
+   yarn start
+
+#  Additional Notes:
+Replace your-username and your-project with your actual GitHub username and project repository name.
+
+
 
