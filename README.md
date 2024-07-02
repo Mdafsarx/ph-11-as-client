@@ -1,8 +1,8 @@
- # aBlogger 
+# aBlogger 
 
 This is a simple blogging platform where you can share your thoughts, ideas, and experiences with the world. Below are some key features of the website.
 
-# About aBlogger
+## About aBlogger
 
 Live Site: [aBlogger](https://scintillating-meringue-0cb917.netlify.app) 
 
@@ -19,7 +19,7 @@ server: [here](https://github.com/Mdafsarx/ph-11-as-server)
 4. **Interactivity and Engagement:** Features like comments sections, social media integration, and sharing buttons encourage reader engagement and interaction, fostering a sense of community around the blog.
 
 
-## Package use
+## NPM Packages Used
 - @tanstack/react-query
 - recharts
 - framer-motion
@@ -56,7 +56,7 @@ Make sure you have Node.js and npm (or yarn) installed on your development machi
    or
    yarn start
 
-#  Additional Notes:
+##  Additional Notes:
 Replace your-username and your-project with your actual GitHub username and project repository name.
 
 
