@@ -10,13 +10,14 @@ server: [here](https://github.com/Mdafsarx/ph-11-as-server)
 
 ## Features
 
-1. **User-friendly Interface:** A good blogging platform provides an intuitive and easy-to-use interface for both writers and readers, allowing them to navigate through the site, create, edit, and publish content effortlessly.
+### 1. All Blogs
+The "All Blogs" section provides a comprehensive list of all blog posts available on the website. Visitors can browse through various articles, read the full posts, and stay updated with the latest content.
 
-2. **Content Management System (CMS):** A robust CMS enables bloggers to organize their content efficiently, categorize posts, schedule publication, and manage drafts and revisions effectively.
+### 2. Wishlist
+The "Wishlist" feature allows users to save their favorite blog posts for future reference. By adding articles to their Wishlist, users can easily keep track of the content they find most interesting and revisit it whenever they like.
 
-3. **Customization Options:** Offering various customization options such as themes, layouts, fonts, and color schemes allows bloggers to personalize their blogs to reflect their brand or personal style.
-
-4. **Interactivity and Engagement:** Features like comments sections, social media integration, and sharing buttons encourage reader engagement and interaction, fostering a sense of community around the blog.
+### 3. My Blog
+The "My Blog" section showcases individual blog entries written by me. This personalized space is where I share my thoughts, knowledge, and experiences on various topics, allowing me to connect with my audience on a deeper level.
 
 
 ## NPM Packages Used
