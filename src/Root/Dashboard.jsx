@@ -27,13 +27,17 @@ const Dashboard = () => {
 
 
     return (
-        <div className="relative">
+        <div className="relative overflow-x-hidden">
             <div className="flex md:gap-8">
                 {/* dashboard */}
                 <div className="bg-[#4CCD99E6] *:text-[#ffffffFA] w-auto min-h-screen">
 
-                    <div className="px-6 mt-7">
-                        <p className="text-2xl font-bold flex items-center gap-0 text-[#E21818]">a<span ><FaBlogger /></span>logger</p>
+                    <div className="px-3 md:px-6 mt-7">
+                        <p className="text-2xl font-bold hidden md:flex items-center gap-0 text-[#E21818]">a<span ><FaBlogger /></span>logger</p>
+
+                        <p className="text-2xl font-bold md:hidden text-[#E21818] -ml-1">
+                        <span ><FaBlogger /></span></p>
+                        
                         {/* d routes */}
                         <div className="space-y-3 mt-8">
                             {role==='guest'?<GuestRoute />:<AdminRoutes/>}
@@ -43,16 +47,26 @@ const Dashboard = () => {
                     <div className="divider"></div>
 
                     {/* common for every user */}
-                    <div className="px-6 space-y-4">
+                    <div className="px-3 md:px-6 space-y-4">
 
-                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/'}><BiHome />Home</NavLink>
-                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/allBlogs'}><TfiWrite />All blogs</NavLink>
-                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/featured'}><GiTopHat />Featured</NavLink>
-                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/wishlist'}><BiSave />Wishlist</NavLink>
+                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/'}><BiHome /> 
+                        <span className="hidden md:block" >Home</span>
+                        </NavLink>
+                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/allBlogs'}><TfiWrite />
+                        <span className="hidden md:block" >All blogs</span>
+                        </NavLink>
+                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/featured'}><GiTopHat />
+                        <span className="hidden md:block" >Featured</span>
+                        </NavLink>
+                        <NavLink className={'flex items-center gap-1 font-bold'} to={'/wishlist'}><BiSave />
+                        <span className="hidden md:block" >Wishlist</span>
+                        </NavLink>
                         <div className="absolute bottom-7 text-center">
                             <button className="flex items-center gap-1 font-bold" onClick={()=>{
                                logout().then(()=>toast.success('Logout successful'))
-                            }}><BiLogOut />Logout</button>
+                            }}><BiLogOut />
+                           <span className="hidden md:block" >Logout</span>
+                            </button>
                         </div>
 
                     </div>

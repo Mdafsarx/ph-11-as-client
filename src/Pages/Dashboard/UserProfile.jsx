@@ -32,9 +32,9 @@ const UserProfile = () => {
 
 
     return (
-        <div className="flex justify-center items-center min-h-[80vh] max-w-5xl mx-auto">
+        <div className="flex justify-center items-center min-h-[80vh] max-w-5xl mx-auto ">
 
-            <div className="max-w-screen-xl w-full p-8 flex bg-white md:shadow-md md:border rounded-xl md:justify-center">
+            <div className="w-full p-8 flex justify-center bg-white md:shadow-md md:border rounded-xl ">
 
                 <div className="hidden md:block w-1/2">
 
@@ -60,7 +60,7 @@ const UserProfile = () => {
                     </div>
                 </div>
 
-                <div className="w-52 md:w-1/2 md:border-l-2 md:border-black pl-5 space-y-7 flex flex-col  justify-center ">
+                <div className="w-52 md:w-1/2 md:border-l-2 md:border-black space-y-7 flex flex-col  justify-center ">
                     <h1 className="text-2xl font-mono text-center">Let's update your profile</h1>
                     <form className="space-y-4 mx-10" onSubmit={handleUpdate}>
                         <div className="flex flex-col text-black">

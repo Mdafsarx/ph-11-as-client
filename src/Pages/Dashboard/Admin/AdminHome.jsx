@@ -51,17 +51,17 @@ const AdminHome = () => {
 
     return (
         <div>
-            <h1 className="text-center mt-6 text-3xl text-[#E21818] font-bold">Welcome to admin home</h1>
+            <h1 className="text-center mt-6 md:text-3xl text-[#E21818] font-bold">Welcome to admin home</h1>
 
-            <div className="max-w-5xl mx-auto flex flex-col items-center md:flex-row gap-10 mt-20">
+            <div className="max-w-5xl mx-auto flex flex-col items-center md:flex-row gap-10 mt-10 md:mt-20">
 
                 <div className="md:w-1/2">
 
                     <section>
 
-                        <div className="container gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
+                        <div className="container gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4 space-y-3 flex flex-col ">
 
-                            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6">
+                            <div className="flex  space-x-4 rounded-lg md:space-x-6">
                                 <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 ">
                                     <BiUser className="text-4xl" />
                                 </div>
@@ -71,7 +71,7 @@ const AdminHome = () => {
                                 </div>
                             </div>
 
-                            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6">
+                            <div className="flex  space-x-4 rounded-lg md:space-x-6">
                                 <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 ">
                                     <BiLogoBlogger className="text-4xl" />
                                 </div>
@@ -81,7 +81,7 @@ const AdminHome = () => {
                                 </div>
                             </div>
 
-                            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6">
+                            <div className="flex  space-x-4 rounded-lg md:space-x-6">
                                 <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 ">
                                     <FcUp className="text-4xl" />
                                 </div>
@@ -91,7 +91,7 @@ const AdminHome = () => {
                                 </div>
                             </div>
 
-                            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6">
+                            <div className="flex space-x-4 rounded-lg md:space-x-6 pl-1.5 md:pl-0">
                                 <div className="flex justify-center ml-3 align-middle rounded-lg sm:p-4">
                                     <GrUserAdmin className="text-3xl" />
                                 </div>

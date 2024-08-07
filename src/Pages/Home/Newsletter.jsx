@@ -25,7 +25,7 @@ const Newsletter = () => {
                 </div>
                 <div className="space-y-3">
                     <input name="email" type="email" placeholder="Email" className="input input-bordered w-full " required />
-                    <button type="submit" className="btn btn-block bg-red-500 text-white border-0 block">Subscribe</button>
+                    <button type="submit" className="btn btn-block bg-[#E21818] hover:bg-[#4CCD99] text-[#4CCD99] hover:text-[#E21818] border-0 block">Subscribe</button>
                 </div>
             </form>
 

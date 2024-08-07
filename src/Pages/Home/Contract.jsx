@@ -24,11 +24,11 @@ const Contract = () => {
     }
 
     return (
-        <div className="my-10">
+        <div >
 
             <div className="text-center text-balance">
                 <h1 className="text-3xl font-bold ">Contact With Us</h1>
-                <p>Got questions or feedback? Reach out <br /> to us! Contact us below for prompt assistance.</p>
+                <p className="hidden md:block">Got questions or feedback? Reach out <br /> to us! Contact us below for prompt assistance.</p>
             </div>
 
             <div>

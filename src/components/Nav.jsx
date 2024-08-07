@@ -50,7 +50,7 @@ const Nav = () => {
                                         <img src={User?.photoURL} />
                                     </div>
                                 </div>
-                                <button className="font-bold text-white hover:text-blue-600 hover:underline" onClick={()=>{
+                                <button className="font-bold text-white hover:text-[#E21818] hover:underline" onClick={()=>{
                                     logout()
                                     .then(()=>toast.success('Logout successful'))
                                     .catch(error=>toast.error(error.message))
@@ -58,9 +58,9 @@ const Nav = () => {
                             </div>
                             :
                             <div className="flex items-center gap-2 font-bold text-white ">
-                                <NavLink to={'/login'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-blue-600 hover:underline'}>Login</NavLink>
+                                <NavLink to={'/login'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-[#E21818] hover:underline'}>Login</NavLink>
 
-                                <NavLink to={'/register'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-blue-600 hover:underline'}>Register</NavLink>
+                                <NavLink to={'/register'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-[#E21818] hover:underline'}>Register</NavLink>
                             </div>
                     }
 

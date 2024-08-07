@@ -1,24 +1,41 @@
 import { useNavigate } from "react-router-dom";
-import img1 from "../../assets/arnel-hasanovic-MNd-Rka1o0Q-unsplash.jpg"
 import img2 from "../../assets/icons8-books-100.png"
+import img3 from "../../assets/arnel-hasanovic-MNd-Rka1o0Q-unsplash.jpg"
+import img4 from "../../assets/b.jpg"
+import img5 from "../../assets/childrens-favourites-l.jpg"
+import img6 from "../../assets/posts-and-pages-1jchsjg-yjxjvs-1080x720.jpeg"
 
 const Banner = () => {
-    const nav=useNavigate()
+    const nav = useNavigate()
     return (
         <div className="">
-            <div className="hero min-h-[80vh] " style={{ backgroundImage: `url(${img1})` }}>
-                <div className="bg-gradient-to-r from-[#00000080] to-[#0000004D] text-center p-5 text-white w-full h-[80vh]">
-                    <div className="space-y-3 flex flex-col justify-center items-center h-[80vh]" data-aos="fade-left"  data-aos-duration="3000" data-aos-delay="1000">
-                        <h1 className="text-6xl font-bold ">Blog is <span className="text-[#E21818]">love</span></h1>
-                        <p className="mb-5">Don’t forget to spend time on your blog <br /> today! Why because blogging is fun</p>
-                        <button className="btn  btn-outline text-white border-white border-2 flex items-center gap-0 font-bold" onClick={()=>{
+            <>
+
+                <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-12 md:gap-52  md:min-h-[90vh] p-4 md:p-0">
+
+                    <div className="space-y-3 text-center flex flex-col items-center">
+                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#E21818] via-[#4CCD99] to-[#4CCD99] bg-clip-text text-transparent">Every miss leads<br /> to a home run</h1>
+
+                        <p className="mb-5 text-balance">Don’t forget to spend time on your blog <br /> today! Why because blogging is fun.</p>
+
+                        <button className="btn bg-[#E21818] hover:bg-[#E21818]  hover:text-[#4CCD99] text-white border-0 flex items-center gap-0 font-bold" onClick={() => {
                             nav('/allBlogs')
                         }}>Blogs
-                          <img src={img2} alt="" className="w-8" />
+                            <img src={img2} alt="" className="w-8" />
                         </button>
                     </div>
+
+                    {/* img */}
+                    <div className="grid grid-cols-2 gap-5 md:w-[35%]">
+                     <img src={img3} className="size-72 rounded-3xl rounded-br-none" />
+                     <img src={img4} className="size-72 rounded-3xl rounded-bl-none" />
+                     <img src={img5} className="size-72 rounded-3xl rounded-tr-none" />
+                     <img src={img6} className="size-72 rounded-3xl rounded-tl-none" />
+                    </div>
+
                 </div>
-            </div>
+
+            </>
         </div>
     );
 };

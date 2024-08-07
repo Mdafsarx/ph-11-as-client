@@ -7,9 +7,15 @@ import { NavLink } from "react-router-dom";
 const GuestRoute = () => {
     return (
         <>
-            <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/UserProfile'}><CgProfile />User profile</NavLink>
-            <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/myCard'}><FiShoppingCart /> My blog</NavLink>
-            <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/Contract'}><BiPhone />Contract us</NavLink>
+            <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/UserProfile'}><CgProfile />
+            <span className="hidden md:block">User profile</span>
+            </NavLink>
+            <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/myCard'}><FiShoppingCart /> 
+            <span className="hidden md:block">My blog</span>
+            </NavLink>
+            <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/Contract'}><BiPhone />
+            <span className="hidden md:block">Contract us</span>
+            </NavLink>
         </>
     );
 };

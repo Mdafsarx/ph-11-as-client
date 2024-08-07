@@ -41,13 +41,13 @@ const AddBlog = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto md:my-20 md:px-5 lg:px-0 ">
-            <section className="p-6 bg-[#F3F4F6C4] opacity-100 md:border-2 md:border-black md:rounded-2xl py-14 md:py-8" data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="500">
+        <div className="max-w-7xl mx-auto  md:my-20 md:px-5 lg:px-0 ">
+            <section className="p-6 bg-[#F3F4F6C4] opacity-100 md:border-2 md:border-black md:rounded-2xl py-16 md:py-8" data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="500">
                 <div className="text-center space-y-2 pb-3">
                     <h1 className="text-3xl font-bold">Add New Blog</h1>
-                    <p className="text-balance">Don't focus on having a great <br /> blog. Focus on producing a blog that's <br /> great for your readers.</p>
+                    <p className="text-balance hidden md:block">Don't focus on having a great <br /> blog. Focus on producing a blog that's <br /> great for your readers.</p>
                 </div>
-                <form className="container flex flex-col mx-auto space-y-12" onSubmit={handleSubmit}>
+                <form className="container flex flex-col mx-auto space-y-6 md:space-y-12" onSubmit={handleSubmit}>
                     <fieldset className="grid grid-cols-4 gap-4 rounded-md p-2">
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-full">
                             <div className="col-span-full sm:col-span-3">
@@ -81,7 +81,7 @@ const AddBlog = () => {
 
                         </div>
                     </fieldset>
-                    <button className="btn btn-block bg-[#E21818] text-white">Submit</button>
+                    <button className="btn btn-block bg-[#E21818] hover:bg-[#4CCD99] hover:text-[#E21818] text-[#4CCD99]">Submit</button>
                 </form>
             </section>
         </div>
