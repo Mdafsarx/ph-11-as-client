@@ -13,17 +13,15 @@ const Nav = () => {
     //  console.log(User.photoURL)
 
     const pages = <>
-        <NavLink to={'/'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Home</NavLink>
+        <NavLink to={'/'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''} data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">Home</NavLink>
 
-        {/* <NavLink to={'/addBlog'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Add blog</NavLink> */}
+        <NavLink to={'/allBlogs'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''} data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">All blogs</NavLink>
 
-        <NavLink to={'/allBlogs'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>All blogs</NavLink>
+        <NavLink to={'/featured'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''} data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">Featured blogs</NavLink>
 
-        <NavLink to={'/featured'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Featured blogs</NavLink>
+        <NavLink to={'/wishlist'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''} data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1100">Wishlist</NavLink>
 
-        <NavLink to={'/wishlist'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>Wishlist</NavLink>
-
-        <NavLink to={`/dashboard/${role?.role==='admin' ?'adminHome':'myCard'}`} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''}>{role?.role==='admin'?'Admin home':'My blog'}</NavLink>
+        <NavLink to={`/dashboard/${role?.role==='admin' ?'adminHome':'myCard'}`} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : ''} data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1400">{role?.role==='admin'?'Admin home':'My blog'}</NavLink>
     </>
 
 
@@ -44,7 +42,7 @@ const Nav = () => {
                     {   loading ? <span className="loading loading-bars loading-md "></span> : 
                         User
                             ?
-                            <div className="flex items-center gap-2 p-2">
+                            <div className="flex items-center gap-2 p-2" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300">
                                 <div className="avatar">
                                     <div className="w-8 rounded-full ring ring-white">
                                         <img src={User?.photoURL} />
@@ -57,7 +55,7 @@ const Nav = () => {
                                 }}>Logout</button>
                             </div>
                             :
-                            <div className="flex items-center gap-2 font-bold text-white ">
+                            <div className="flex items-center gap-2 font-bold text-white" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300">
                                 <NavLink to={'/login'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-[#E21818] hover:underline'}>Login</NavLink>
 
                                 <NavLink to={'/register'} className={({ isActive }) => isActive ? 'underline md:no-underline text-red-600 md:btn  md:btn-sm md:btn-outline md:border-white md:border-2 ' : 'hover:text-[#E21818] hover:underline'}>Register</NavLink>
@@ -74,7 +72,7 @@ const Nav = () => {
                         {pages}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
                     <p className="text-2xl font-bold flex items-center gap-0 text-[#E21818]">a<span ><FaBlogger /></span>logger</p>
                 </div>
             </div>

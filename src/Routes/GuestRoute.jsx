@@ -1,6 +1,5 @@
 import { BiPhone } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
-import { FiShoppingCart } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
 
@@ -9,9 +8,6 @@ const GuestRoute = () => {
         <>
             <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/UserProfile'}><CgProfile />
             <span className="hidden md:block">User profile</span>
-            </NavLink>
-            <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/myCard'}><FiShoppingCart /> 
-            <span className="hidden md:block">My blog</span>
             </NavLink>
             <NavLink className={'flex items-center gap-1 font-bold'} to={'/dashboard/Contract'}><BiPhone />
             <span className="hidden md:block">Contract us</span>

@@ -102,7 +102,7 @@ const Comment = ({ blogId, ownerEmail }) => {
 
                                 <form className="flex flex-col w-full gap-3" onSubmit={handleSubmit}>
                                     <textarea rows="3" name="text" placeholder="Message..." className="p-4 rounded-md resize-none border-2 border-black"></textarea>
-                                    <button type="submit" id="btn" className="btn bg-black text-white" >Submit</button>
+                                    <button type="submit" id="btn" className="btn bg-[#E21818] text-white hover:bg-[#4CCD99]" >Submit</button>
                                 </form>
                             </div>
                         </div>

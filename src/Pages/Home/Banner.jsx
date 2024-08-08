@@ -13,7 +13,7 @@ const Banner = () => {
 
                 <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-12 md:gap-52  md:min-h-[90vh] p-4 md:p-0">
 
-                    <div className="space-y-3 text-center flex flex-col items-center">
+                    <div className="space-y-3 text-center flex flex-col items-center" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300">
                         <h1 className="text-5xl font-bold bg-gradient-to-r from-[#E21818] via-[#4CCD99] to-[#4CCD99] bg-clip-text text-transparent">Every miss leads<br /> to a home run</h1>
 
                         <p className="mb-5 text-balance">Don’t forget to spend time on your blog <br /> today! Why because blogging is fun.</p>
@@ -27,10 +27,10 @@ const Banner = () => {
 
                     {/* img */}
                     <div className="grid grid-cols-2 gap-5 md:w-[35%]">
-                     <img src={img3} className="size-72 rounded-3xl rounded-br-none" />
-                     <img src={img4} className="size-72 rounded-3xl rounded-bl-none" />
-                     <img src={img5} className="size-72 rounded-3xl rounded-tr-none" />
-                     <img src={img6} className="size-72 rounded-3xl rounded-tl-none" />
+                     <img src={img3} className="size-72 rounded-3xl rounded-br-none" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"/>
+                     <img src={img4} className="size-72 rounded-3xl rounded-bl-none" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="500"/>
+                     <img src={img5} className="size-72 rounded-3xl rounded-tr-none" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="800"/>
+                     <img src={img6} className="size-72 rounded-3xl rounded-tl-none" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="1100"/>
                     </div>
 
                 </div>

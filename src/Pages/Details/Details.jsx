@@ -36,8 +36,6 @@ const Details = () => {
 
                 </div>
 
-
-
                 <div className="col-span-3  p-3 space-y-3 bg-white md:shadow-2xl md:rounded-xl"  data-aos="fade-left"  data-aos-duration="3000" data-aos-delay="500">
 
                     <p className="text-2xl ">title: <span className="font-serif font-bold">{title}</span></p>
@@ -46,7 +44,7 @@ const Details = () => {
                     <p><span className="font-bold">Short Description:</span> {description}</p>
                     <p className="border-b-2 pb-2"><span className="font-bold">Long Description:</span> {longDescription}...</p>
 
-                        <button className="btn btn-block bg-[#4CCD99] text-white" id="update" disabled={User?.email !== email} onClick={()=>{
+                        <button className="btn btn-block bg-[#4CCD99] hover:bg-[#E21818] text-white" id="update" disabled={User?.email !== email} onClick={()=>{
                            nav(`/update/${id}`)
                         }}>Update</button>
 

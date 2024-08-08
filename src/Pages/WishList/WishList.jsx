@@ -30,7 +30,7 @@ const WishList = () => {
         <div className={`max-w-7xl mx-auto my-10  px-5 ${data?.length===1||data?.length===2 ? 'my-10 md:my-32':'my-10 md:my-16'}`}>
          
             <div className="flex justify-between items-center mb-4 md:mb-6">
-                <h1 className="text-2xl md:text-4xl text-[#E21818]">Wishlist (0)</h1>
+                <h1 className="text-2xl md:text-4xl text-[#E21818]">Wishlist ({data?.length})</h1>
                 <Link to={'/allBlogs'} className="btn bg-[#4CCD99] text-white hover:bg-[#4CCD99] hover:text-[#E21818]">Add Blog</Link>
             </div>
          

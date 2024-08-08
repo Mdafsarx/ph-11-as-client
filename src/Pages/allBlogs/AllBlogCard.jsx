@@ -25,7 +25,7 @@ const AllBlogCard = ({ data }) => {
 
 
     return (
-        <div data-aos="zoom-in"  data-aos-duration="3000" data-aos-delay="1000">
+        <div data-aos="zoom-in"  data-aos-duration="1500" data-aos-delay="500">
             <div className={`flex flex-col lg:flex-row items-center  bg-gradient-to-tl from-[#000000DB] to-[#00000033] shadow-xl text-white rounded-2xl h-96 lg:h-56`}>
 
                 <figure className="m-3 md:m-4">

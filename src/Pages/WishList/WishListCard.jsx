@@ -10,7 +10,7 @@ const WishListCard = ({ Wishlist }) => {
 
 
     return (
-        <div>
+        <div data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
             <div className="flex flex-col md:flex-row items-center shadow-lg rounded-3xl rounded-tl-none border-2 border-black md:h-64">
 
                 <figure className="m-4">

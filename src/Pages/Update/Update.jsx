@@ -90,7 +90,7 @@ const Update = () => {
 
                                     </div>
                                 </fieldset>
-                                <button className="btn btn-block bg-[#E21818] text-white">Update</button>
+                                <button className="btn btn-block bg-[#E21818] hover:bg-[#4CCD99] text-white">Update</button>
                             </form>
                         </section>
                     </div>
